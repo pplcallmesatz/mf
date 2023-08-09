@@ -39,6 +39,9 @@
         tbody tr:hover{
             background: #e2f2f9;
         }
+        .title-header{
+            margin-bottom: 30px;
+        }
     </style>
     <div class="container">
         <!-- Display validation errors if any -->
@@ -57,9 +60,7 @@
                 {{ session('success') }}
             </div>
         @endif
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
-            Launch demo modal
-        </button>
+
         <!-- Entry creation form -->
         <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -105,7 +106,18 @@
                 </div>
             </div>
         </div>
-
+<div class="row">
+    <div class="row title-header">
+        <div class="col-md-6">
+            <h2>List of Shares Purchased</h2>
+        </div>
+        <div class="col-md-6" style="text-align: right">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
+                Add new
+            </button>
+        </div>
+    </div>
+      <div class="col-md-12">
         <div class="table-responsive">
             <table>
                 <thead>
@@ -135,7 +147,8 @@
                 </tbody>
             </table>
         </div>
-
+      </div>
+</div>
 
         @push('scripts')
         <script>
